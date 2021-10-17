@@ -158,3 +158,7 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     wpa_supplicant.conf \
     WifiOverlay
+
+# StargonBrowser
+PRODUCT_PACKAGES += \
+    Stargon
