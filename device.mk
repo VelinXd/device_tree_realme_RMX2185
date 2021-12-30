@@ -26,7 +26,7 @@ $(call inherit-product, vendor/realme/RMX2185/RMX2185-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # IMS
-$(call inherit-product, vendor/mtk-ims/ims.mk)
+$(call inherit-product, vendor/mediatek-ims/realme-ims-vendor.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 29
 
