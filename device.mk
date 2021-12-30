@@ -25,14 +25,8 @@ $(call inherit-product, vendor/realme/RMX2185/RMX2185-vendor.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# Parts
-PRODUCT_PACKAGES += \
-    parts.rc \
-    RealmeParts
-
-# Realme Dirac
-PRODUCT_PACKAGES += \
-    RealmeDirac
+# IMS
+$(call inherit-product, vendor/mtk-ims/ims.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 29
 
@@ -46,6 +40,7 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 720
+TARGET_BOOTANIM_LOW_RES := true
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -130,7 +125,10 @@ PRODUCT_PACKAGES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.controls.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.controls.xml \
-    $(DEVICE_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
+    $(DEVICE_PATH)/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-whitelist-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-whitelist-system.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-whitelist-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM)/system_ext/etc/permissions/privapp-permissions-whitelist-system_ext.xml \
+    $(DEVICE_PATH)/permissions/privapp-permissions-whitelist-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-whitelist-product.xml
 
 # Properties
 -include $(DEVICE_PATH)/system_prop.mk
@@ -145,6 +143,11 @@ PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
     PresencePolling \
     RcsService
+	
+# Screen density
+PRODUCT_AAPT_CONFIG := xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREBUILT_DPI := xhdpi xxhdpi 
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
@@ -152,6 +155,11 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 # Symbols
 PRODUCT_PACKAGES += \
     libshim_showlogo
+	
+# ThemePicker
+PRODUCT_PACKAGES += \
+    ThemePicker \
+    messaging
 
 # Wi-Fi
 PRODUCT_PACKAGES += \

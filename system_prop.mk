@@ -1,43 +1,15 @@
-# Blurs
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.surface_flinger.supports_background_blur=1
-    ro.sf.blurs_are_expensive=1 \
-    persist.sys.sf.disable_blurs=1
 
+# Bootanimation
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.config.nocheckin=1
 # Camera
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.google.camera,org.pixelexperience.faceunlock \
     vendor.camera.aux.packageblacklist=org.telegram.messenger,com.microsoft.teams,com.discord
 
-# Dex2oat
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    dalvik.vm.dex2oat64.enabled=true \
-    dalvik.vm.image-dex2oat-filter=quicken \
-    dalvik.vm.image-dex2oat-threads=8 \
-    dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
-    dalvik.vm.dex2oat-filter=quicken \
-    dalvik.vm.dex2oat-threads=8 \
-    dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
-    dalvik.vm.boot-dex2oat-threads=8 \
-    dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7
-
-# Iorap
-PRODUCT_PROPERTY_OVERRIDES += \
-   iorapd.perfetto.enable=true \
-   iorapd.readahead.enable=true
-
 # Display
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.sf.lcd_density=320
-	
-# Hardware Acceleration
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    video.accelerate.hw=1 \
-    debug.sf.hw=1 \
-    debug.performance.tuning=1 \
-    debug.egl.profiler=1 \
-    debug.egl.hw=1 \
-    debug.composition.type=gpu
 
 # IMS
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -70,8 +42,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Surfaceflinger
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     debug.sf.latch_unsignaled=1 \
-    ro.surface_flinger.has_HDR_display=true \
-    ro.surface_flinger.has_wide_color_display=true \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.running_without_sync_framework=true \
     ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
@@ -98,8 +68,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # GBoard
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.ime.kb_pad_port_b=1 \
-    ro.com.google.ime.corner_key_r=35
+    ro.com.google.ime.kb_pad_port_b=1
 
 # WFD
 PRODUCT_PROPERTY_OVERRIDES += \
