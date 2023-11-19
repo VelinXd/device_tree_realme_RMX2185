@@ -388,35 +388,21 @@
     <integer-array name="config_autoBrightnessLcdBacklightValues">
         <item>2</item>
         <item>5</item>
-        <item>9</item>
-        <item>13</item>
-        <item>16</item>
         <item>21</item>
         <item>30</item>
         <item>51</item>
-        <item>51</item>
-        <item>51</item>
-        <item>52</item>
-        <item>52</item>
-        <item>52</item>
-        <item>52</item>
-        <item>61</item>
-        <item>62</item>
-        <item>63</item>
-        <item>64</item>
-        <item>65</item>
-        <item>66</item>
-        <item>67</item>
-        <item>67</item>
-        <item>69</item>
         <item>70</item>
         <item>100</item>
-        <item>113</item>
         <item>163</item>
         <item>171</item>
         <item>208</item>
         <item>255</item>
-        <item>255</item>
+        <item>270</item
+        <item>300</item>
+        <item>325</item>
+        <item>340</item>
+        <item>365</item>
+        <item>390</item>>
     </integer-array>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
@@ -463,6 +449,11 @@
         <item>195</item>
         <item>240</item>
         <item>255</item>
+        <item>290</item>
+        <item>320</item>
+        <item>350</item>
+        <item>370</item>
+        <item>390</item>
     </integer-array>
 
     <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
