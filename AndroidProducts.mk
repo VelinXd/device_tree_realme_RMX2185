@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/nad_RMX2185.mk
+    $(LOCAL_DIR)/descendant_RMX2185.mk
 
 COMMON_LUNCH_CHOICES := \
-    nad_RMX2185-user \
-    nad_RMX2185-userdebug \
-    nad_RMX2185-eng
+    descendant_RMX2185-user \
+    descendant_RMX2185-userdebug \
+    descendant_RMX2185-eng
